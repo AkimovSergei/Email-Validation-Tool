@@ -76,6 +76,8 @@ class EmailAddress
       */
      private function getEmailPart($partNumber)
      {
-          return (explode('@', $this->emailAddress))[$partNumber];
+          $parts = explode('@', $this->emailAddress);
+
+          return $parts[$partNumber];
      }
 }
