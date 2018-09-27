@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace EmailValidation\Validations;
 
 class EmailHostValidator extends Validator implements ValidatorInterface
@@ -9,7 +7,7 @@ class EmailHostValidator extends Validator implements ValidatorInterface
     /**
      * @return string
      */
-    public function getValidatorName(): string
+    public function getValidatorName()
     {
         return 'valid_host'; // @codeCoverageIgnore
     }
@@ -17,7 +15,7 @@ class EmailHostValidator extends Validator implements ValidatorInterface
     /**
      * @return bool
      */
-    public function getResultResponse(): bool
+    public function getResultResponse()
     {
         $hostName = $this->getEmailAddress()->getHostPart();
         if ($hostName) {
@@ -31,7 +29,7 @@ class EmailHostValidator extends Validator implements ValidatorInterface
      * @param string $hostName
      * @return string
      */
-    protected function getHostByName(string $hostName): string
+    protected function getHostByName($hostName)
     {
         return gethostbyname($hostName); // @codeCoverageIgnore
     }

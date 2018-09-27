@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace EmailValidation\Validations;
 
 class MxRecordsValidator extends Validator implements ValidatorInterface
@@ -9,7 +7,7 @@ class MxRecordsValidator extends Validator implements ValidatorInterface
     /**
      * @return string
      */
-    public function getValidatorName(): string
+    public function getValidatorName()
     {
         return 'valid_mx_records'; // @codeCoverageIgnore
     }
@@ -17,7 +15,7 @@ class MxRecordsValidator extends Validator implements ValidatorInterface
     /**
      * @return bool
      */
-    public function getResultResponse(): bool
+    public function getResultResponse()
     {
         if ($this->getEmailAddress()->isValidEmailAddressFormat()) {
             return $this->checkDns($this->getEmailAddress()->getHostPart(), 'MX');
@@ -31,7 +29,7 @@ class MxRecordsValidator extends Validator implements ValidatorInterface
      * @param null $type
      * @return bool
      */
-    protected function checkDns(string $host, $type = null): bool
+    protected function checkDns($host, $type = null)
     {
         return checkdnsrr($host, $type);
     }

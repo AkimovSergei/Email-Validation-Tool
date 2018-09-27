@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace EmailValidation\Validations;
 
 class RoleBasedEmailValidator extends Validator implements ValidatorInterface
@@ -9,7 +7,7 @@ class RoleBasedEmailValidator extends Validator implements ValidatorInterface
     /**
      * @return string
      */
-    public function getValidatorName(): string
+    public function getValidatorName()
     {
         return 'role_or_business_email'; // @codeCoverageIgnore
     }
@@ -17,7 +15,7 @@ class RoleBasedEmailValidator extends Validator implements ValidatorInterface
     /**
      * @return bool
      */
-    public function getResultResponse(): bool
+    public function getResultResponse()
     {
         return in_array(
             $this->getEmailAddress()->getNamePart(),

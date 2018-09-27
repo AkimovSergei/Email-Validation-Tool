@@ -1,11 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace EmailValidation\Validations;
 
 interface ValidatorInterface
 {
+
     /**
      * @return mixed
      */
@@ -14,5 +13,6 @@ interface ValidatorInterface
     /**
      * @return string
      */
-    public function getValidatorName(): string;
+    public function getValidatorName();
+
 }

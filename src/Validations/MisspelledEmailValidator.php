@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace EmailValidation\Validations;
 
 /**
@@ -15,7 +13,7 @@ class MisspelledEmailValidator extends Validator implements ValidatorInterface
     /**
      * @return string
      */
-    public function getValidatorName(): string
+    public function getValidatorName()
     {
         return 'possible_email_correction'; // @codeCoverageIgnore
     }
@@ -23,7 +21,7 @@ class MisspelledEmailValidator extends Validator implements ValidatorInterface
     /**
      * @return string
      */
-    public function getResultResponse(): string
+    public function getResultResponse()
     {
         if (!$this->getEmailAddress()->isValidEmailAddressFormat()) {
             return ''; // @codeCoverageIgnore
@@ -40,7 +38,7 @@ class MisspelledEmailValidator extends Validator implements ValidatorInterface
     /**
      * @return string
      */
-    private function findEmailAddressSuggestion(): string
+    private function findEmailAddressSuggestion()
     {
         if ($domainSuggestion = $this->findDomainSuggestion()) {
             return str_replace(
@@ -97,7 +95,7 @@ class MisspelledEmailValidator extends Validator implements ValidatorInterface
      * @param int $minimumDistance
      * @return string|bool
      */
-    private function findClosestWord(string $stringToCheck, array $wordsToCheck, int $minimumDistance): string
+    private function findClosestWord($stringToCheck, array $wordsToCheck, $minimumDistance)
     {
         if (in_array($stringToCheck, $wordsToCheck)) {
             return $stringToCheck;

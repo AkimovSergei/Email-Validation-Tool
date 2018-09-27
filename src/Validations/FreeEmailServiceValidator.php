@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace EmailValidation\Validations;
 
 class FreeEmailServiceValidator extends Validator implements ValidatorInterface
@@ -9,7 +7,7 @@ class FreeEmailServiceValidator extends Validator implements ValidatorInterface
     /**
      * @return string
      */
-    public function getValidatorName(): string
+    public function getValidatorName()
     {
         return 'free_email_provider'; //@codeCoverageIgnore
     }

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace EmailValidation\Validations;
 
 use EmailValidation\EmailAddress;
@@ -29,7 +27,7 @@ abstract class Validator
     /**
      * @return EmailAddress
      */
-    public function getEmailAddress(): EmailAddress
+    public function getEmailAddress()
     {
         return $this->emailAddress;
     }
@@ -37,7 +35,7 @@ abstract class Validator
     /**
      * @return EmailDataProviderInterface
      */
-    public function getEmailDataProvider(): EmailDataProviderInterface
+    public function getEmailDataProvider()
     {
         return $this->emailDataProvider;
     }

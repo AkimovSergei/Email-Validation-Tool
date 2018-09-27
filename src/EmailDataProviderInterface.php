@@ -2,25 +2,32 @@
 
 namespace EmailValidation;
 
+/**
+ * Interface EmailDataProviderInterface
+ *
+ * @package EmailValidation
+ */
 interface EmailDataProviderInterface
 {
-    /**
-     * @return array
-     */
-    public function getEmailProviders(): array;
 
-    /**
-     * @return array
-     */
-    public function getTopLevelDomains(): array;
+     /**
+      * @return array
+      */
+     public function getEmailProviders();
 
-    /**
-     * @return array
-     */
-    public function getDisposableEmailProviders(): array;
+     /**
+      * @return array
+      */
+     public function getTopLevelDomains();
 
-    /**
-     * @return array
-     */
-    public function getRoleEmailPrefixes(): array;
+     /**
+      * @return array
+      */
+     public function getDisposableEmailProviders();
+
+     /**
+      * @return array
+      */
+     public function getRoleEmailPrefixes();
+
 }
